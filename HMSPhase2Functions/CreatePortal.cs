@@ -1,7 +1,6 @@
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
-using Microsoft.WindowsAzure.Storage.Table;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -38,14 +37,6 @@ namespace HMSPhase2Functions
             });
             return req.CreateResponse(HttpStatusCode.Created);
         }
-
-        public class Portal : TableEntity
-        {
-            public string PortalName { get; set; }
-            public string Administrator { get; set; }
-            public string Email { get; set; }
-            public string Password { get; set; }
-            public string UrlSuffix { get; set; }
-        }
+        
     }
 }

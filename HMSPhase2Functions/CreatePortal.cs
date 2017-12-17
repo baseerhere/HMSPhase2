@@ -32,7 +32,7 @@ namespace HMSPhase2Functions
                 PortalName = portalname,
                 Administrator = administrator,
                 Email = email,
-                Password = password,
+                Password = password, 
                 UrlSuffix = urlsuffix
             });
             return req.CreateResponse(HttpStatusCode.Created);

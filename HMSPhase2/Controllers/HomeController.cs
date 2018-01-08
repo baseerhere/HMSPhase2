@@ -13,5 +13,15 @@ namespace HMSPhase2.Controllers
         {
             return View("Index");
         }
+
+        public ActionResult Restaurants()
+        {
+            return View("Restaurants");
+        }
+
+        public ActionResult CreateRestaurant()
+        {
+            return View("CreateRestaurant");
+        }
     }
 }

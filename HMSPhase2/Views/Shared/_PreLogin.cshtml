@@ -19,20 +19,15 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
-        @Html.Partial("_Header")
-        @Html.Partial("_Sidebar")
-
-        <div class="content-wrapper">
-            <section class="content">
-                @RenderBody()
-            </section>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo" style="background-color:#3c8dbc;">
+            <img src="~/Content/img/siteLogo.png" />
         </div>
-
-        @Html.Partial("_ControlSidebar")
+        <!-- /.login-logo -->
+        @RenderBody()
+        <!-- /.login-box-body -->
     </div>
-
     <script src="@RouteJs.RouteJsHandler.HandlerUrl"></script>
     <script src="@EnumHandler.HandlerUrl"></script>
     @Scripts.Render("~/Bundles/js")

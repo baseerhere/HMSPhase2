@@ -44,7 +44,7 @@ namespace HMSPhase2
             }
             else
             {
-                routeData.Values["action"] = "InternalServerError";
+                //routeData.Values["action"] = "InternalServerError";
             }
 
             using (Controller controller = new ErrorController())

@@ -64,8 +64,8 @@ namespace HMSPhase2.Lambda
         /// A Lambda function that returns back a page worth of Restaurant posts.
         /// </summary>
         /// <param name="request"></param>
-        /// <returns>The list of blogs</returns>
-        public async Task<APIGatewayProxyResponse> GetBlogsAsync(APIGatewayProxyRequest request, ILambdaContext context)
+        /// <returns>The list of Restaurants</returns>
+        public async Task<APIGatewayProxyResponse> GetRestaurantsAsync(APIGatewayProxyRequest request, ILambdaContext context)
         {
             context.Logger.LogLine("Getting Restaurants");
             var search = this.DDBContext.ScanAsync<Restaurant>(null);
@@ -87,7 +87,7 @@ namespace HMSPhase2.Lambda
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public async Task<APIGatewayProxyResponse> GetBlogAsync(APIGatewayProxyRequest request, ILambdaContext context)
+        public async Task<APIGatewayProxyResponse> GetRestaurantAsync(APIGatewayProxyRequest request, ILambdaContext context)
         {
             string restaurantId = null;
             if (request.PathParameters != null && request.PathParameters.ContainsKey(ID_QUERY_STRING_NAME))
@@ -130,7 +130,7 @@ namespace HMSPhase2.Lambda
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public async Task<APIGatewayProxyResponse> AddBlogAsync(APIGatewayProxyRequest request, ILambdaContext context)
+        public async Task<APIGatewayProxyResponse> AddRestaurantAsync(APIGatewayProxyRequest request, ILambdaContext context)
         {
             var Restaurant = JsonConvert.DeserializeObject<Restaurant>(request?.Body);
             Restaurant.Id = Guid.NewGuid().ToString();
@@ -152,7 +152,7 @@ namespace HMSPhase2.Lambda
         /// A Lambda function that removes a Restaurant post from the DynamoDB table.
         /// </summary>
         /// <param name="request"></param>
-        public async Task<APIGatewayProxyResponse> RemoveBlogAsync(APIGatewayProxyRequest request, ILambdaContext context)
+        public async Task<APIGatewayProxyResponse> RemoveRestaurantAsync(APIGatewayProxyRequest request, ILambdaContext context)
         {
             string restaurantId = null;
             if (request.PathParameters != null && request.PathParameters.ContainsKey(ID_QUERY_STRING_NAME))

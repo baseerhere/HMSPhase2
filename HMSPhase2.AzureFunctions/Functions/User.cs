@@ -10,10 +10,11 @@ using Microsoft.WindowsAzure.Storage.Table;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
+using HMSPhase2.AzureFunctions.Collections;
 
 namespace HMSPhase2.AzureFunctions
 {
-    public static class CreateUser
+    public static class User
     {
         [FunctionName("CreateUser")]
         public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "post")]HttpRequestMessage req, TraceWriter log)
@@ -26,7 +27,7 @@ namespace HMSPhase2.AzureFunctions
                 //retrieving the content from the request's body
                 jsonContent = await req.Content.ReadAsStringAsync().ConfigureAwait(false);
                 //assuming we have valid JSON content, convert to BSON
-                var doc = BsonSerializer.Deserialize<User>(jsonContent);
+                var doc = BsonSerializer.Deserialize<DBModels.User>(jsonContent);
                 var collection = UsersCollection.Instance;
                 //store new document in MongoDB collection
                 await collection.InsertOneAsync(doc).ConfigureAwait(false);

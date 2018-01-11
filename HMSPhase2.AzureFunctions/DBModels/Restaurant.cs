@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using System;
 
-namespace HMSPhase2.DBModels
+namespace HMSPhase2.AzureFunctions.DBModels
 {
     class Restaurant
     {

@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson;
 
-namespace HMSPhase2.DBModels
+namespace HMSPhase2.AzureFunctions.DBModels
 {
     public class User
     {
@@ -9,6 +9,5 @@ namespace HMSPhase2.DBModels
         public string Email { get; set; }
         public string Password { get; set; }
         public bool IsActive { get; set; }
-        
     }
 }

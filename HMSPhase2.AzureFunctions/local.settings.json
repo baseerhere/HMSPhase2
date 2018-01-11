@@ -1,0 +1,8 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "AzureWebJobsDashboard": "",
+    "MongoDBConnectionString": "mongodb://hms:JX8Cw7yb26WAmhhV228HXXpXQcuxAbSkXSMv0fHMnPvLnn3b9ElclVjld01cMmIisXUPSB7ZZP0Vncm434LHpA==@hms.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
+  }
+}
